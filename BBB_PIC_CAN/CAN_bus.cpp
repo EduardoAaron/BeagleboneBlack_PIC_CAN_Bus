@@ -18,7 +18,7 @@
 
 /* 
  * File:   CAN_bus.cpp
- * Author: Edu
+ * Author: Eduardo Aarón Feránadez Orallo
  * 
  * Created on 3 de diciembre de 2015, 13:51
  */

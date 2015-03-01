@@ -1,14 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   main.cpp
- * Author: Edu
- *
+ * Author: Eduardo Aarón Feránadez Orallo
  * Created on 24 de febrero de 2016, 21:49
+ * * *************************************************
+ * - This program only receives data from the CAN bus and displays them on screen.
  */
 
 #include <cstdlib>
@@ -51,13 +46,12 @@ int main(int argc, char** argv) {
     
     while(true) {
         if (PIC_CAN->read_bus() > 0) {
-            cout << "\nMensaje recibido. Direccion: " << hex << PIC_CAN->frame_read.can_id << endl;
+            cout << "\nData received. ID: " << hex << PIC_CAN->frame_read.can_id << endl;
 
             printf("DLC: [%d] ", PIC_CAN->frame_read.can_dlc);
                 
             for (i = 0; i < PIC_CAN->frame_read.can_dlc; i++) {
-                printf(" Dato %d: %04X",i ,PIC_CAN->frame_read.data[i]);
-                //printf(" ADC: %d\n", PIC_CAN->frame_read.data[i]);
+                printf(" Data %d: %04X",i ,PIC_CAN->frame_read.data[i]);
             }
         }
     }

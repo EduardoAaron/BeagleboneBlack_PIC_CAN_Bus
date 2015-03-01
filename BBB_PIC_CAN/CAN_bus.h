@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   CAN_bus.h
- * Author: Edu
+ * Author: Eduardo Aarón Feránadez Orallo
  *
  * Created on 3 de diciembre de 2015, 13:51
  */

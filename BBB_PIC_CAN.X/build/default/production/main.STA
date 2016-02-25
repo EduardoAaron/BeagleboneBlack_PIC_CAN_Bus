@@ -1,0 +1,52 @@
+
+ROM used:   1348/32768 (4%)
+            1348/32768 (4%) including unused fragments
+
+            0.3 Average locations per line
+            2.3 Average locations per statement
+
+RAM used:   24/3648 (1%) at main() level
+            48/3648 (1%) worst case
+
+Stack used: 1 worst case (1 in main + 0 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   75    14   2  main.c
+  907     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\18F25K80.h
+ 1869   563  98  ..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\can-18F4580.c
+ 1022     0   0  ..\..\..\..\..\..\..\Program Files (x86)\PICC\drivers\can-18F4580.h
+----- -----
+ 3873   577 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     40   1    1             @delay_ms1
+0    406  15    1   1827  5.4  can_init
+0     50   2    0    255  2.3  can_set_baud
+0     34   1    2     76  3.1  can_set_mode
+0    296  11   11   1068  6.4  can_set_id
+0    384  14   17   2548  9.1  can_putd
+0    134   5    1    364  3.8  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               6
+    Statements              577
+    Comments                1725
+    Volume (V)              8086
+    Difficulty (D)          30.4
+    Effort to implement (E) 246024
+    Time to implement (T)   3 hours, 48 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   15
+    Maintainability (MI)    104
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE  1344  31420  
+
+
+

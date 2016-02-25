@@ -1,0 +1,9 @@
+C:\Users\Edu\Documents\Electronica\CAN\BBB_PIC_CAN\BBB_PIC_CAN.X\main.c:60:1:  Warning#203  Condition always TRUE
+C:\Users\Edu\Documents\Electronica\CAN\BBB_PIC_CAN\BBB_PIC_CAN.X\main.c:42:7:  Warning#202  Variable never used:   rx_id
+C:\Users\Edu\Documents\Electronica\CAN\BBB_PIC_CAN\BBB_PIC_CAN.X\main.c:43:5:  Warning#202  Variable never used:   rx_len
+C:\Users\Edu\Documents\Electronica\CAN\BBB_PIC_CAN\BBB_PIC_CAN.X\main.c:44:16:  Warning#202  Variable never used:   stat
+C:\Users\Edu\Documents\Electronica\CAN\BBB_PIC_CAN\BBB_PIC_CAN.X\main.c:45:14:  Warning#202  Variable never used:   receive
+C:\Users\Edu\Documents\Electronica\CAN\BBB_PIC_CAN\BBB_PIC_CAN.X\main.c:47:16:  Warning#202  Variable never used:   control
+      Memory usage:   ROM=4%      RAM=1% - 1%
+      0 Errors,  6 Warnings.
+Build Successful.

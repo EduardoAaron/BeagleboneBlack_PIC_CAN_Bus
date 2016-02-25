@@ -78,5 +78,6 @@ void CAN_bus::filter(canid_t id, canid_t mask) {
 
 
 CAN_bus::~CAN_bus() {
+    close(sock);
 }
 

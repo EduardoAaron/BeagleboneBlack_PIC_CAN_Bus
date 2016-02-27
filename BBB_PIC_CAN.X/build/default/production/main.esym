@@ -1,7 +1,7 @@
 D G "__PCH__" 0 0 ""5.025""
 D G "__DEVICE__" 0 0 ""
-D G "__DATE__" 0 0 ""24-feb.-16""
-D G "__TIME__" 0 0 ""23:04:36""
+D G "__DATE__" 0 0 ""27-feb.-16""
+D G "__TIME__" 0 0 ""15:41:51""
 D G "__18F25K80" 0 0 "1" "* File:   main.c"
 C G "" 0 1 1 "*"
 C G "" 0 1 1 "*"
@@ -973,15 +973,15 @@ d G "INT_RB4" 1 901 "0x110F208"
 d G "INT_RB5" 1 902 "0x120F208"
 d G "INT_RB6" 1 903 "0x140F208"
 d G "INT_RB7" 1 904 "0x180F208"
-D G "CAN_USE_EXTENDED_ID" 0 19 "FALSE"
-D G "CAN_BRG_SEG_2_PHASE_TS" 0 20 "TRUE"
-D G "CAN_BRG_PRESCALAR" 0 21 "1"
-D G "CAN_BRG_SYNCH_JUMP_WIDTH" 0 22 "0"
-D G "CAN_BRG_PROPAGATION_TIME" 0 23 "7"
-D G "CAN_BRG_PHASE_SEGMENT_1" 0 24 "0"
-D G "CAN_BRG_PHASE_SEGMENT_2" 0 25 "5"
-D G "CAN_BRG_WAKE_FILTER" 0 26 "TRUE"
-D G "CAN_BRG_SAM" 0 27 "FALSE"
+D G "CAN_USE_EXTENDED_ID" 0 20 "FALSE"
+D G "CAN_BRG_SEG_2_PHASE_TS" 0 21 "TRUE"
+D G "CAN_BRG_PRESCALAR" 0 22 "1"
+D G "CAN_BRG_SYNCH_JUMP_WIDTH" 0 23 "0"
+D G "CAN_BRG_PROPAGATION_TIME" 0 24 "7"
+D G "CAN_BRG_PHASE_SEGMENT_1" 0 25 "0"
+D G "CAN_BRG_PHASE_SEGMENT_2" 0 26 "5"
+D G "CAN_BRG_WAKE_FILTER" 0 27 "TRUE"
+D G "CAN_BRG_SAM" 0 28 "FALSE"
 C L "jump_to_isr" 2 2 120 "FUNCTION"
 D G "__CCS_CAN18F4580_LIB_DEFINES__" 3 20 ""
 D G "CAN_DO_DEBUG" 3 23 "FALSE"
@@ -2035,25 +2035,18 @@ C L "can_b5_putd" 2 135 1 "FUNCTION"
 C L "can_b5_putd" 2 135 1 "FUNCTION"
 C L "can_b5_putd" 2 135 1 "FUNCTION"
 C L "can_b5_putd" 2 135 1 "FUNCTION"
-D G "PIN_LED1" 0 31 "PIN_A2"
-D G "PIN_LED2" 0 32 "PIN_A1"
-D G "LED1_LOW" 0 34 "output_low(PIN_LED1)"
-D G "LED1_HIGH" 0 35 "output_high(PIN_LED1)"
-D G "LED2_LOW" 0 36 "output_low(PIN_LED2)"
-D G "LED2_HIGH" 0 37 "output_high(PIN_LED2)"
-D G "ASK_FOR_ID_AD_B" 0 39 "0x201" "ask for AD info from CAN port B"
-V G "rx_id" 0 42 "int32" `1482 
-V G "rx_len" 0 43 "int8" `1483 
-V G "i" 0 43 "int8" `1484 
-V G "b" 0 43 "int8" `1485 
-V G "stat" 0 44 "{int1 err_ovfl,int8 filthit,int8 buffer,int1 rtr,int1 ext,int1 inv}" `1486 
-V G "receive" 0 45 "int8[2]" `1487 
-V G "send" 0 46 "int8[2]" `1488 
-V G "control" 0 47 "int16" `1489 
-F G "MAIN" 0 52 "void()" `1490 
-C L "MAIN" 0 41 1 "FUNCTION"
-C L "MAIN" 0 41 1 "FUNCTION"
-C L "MAIN" 0 41 1 "FUNCTION"
+D G "PIN_LED1" 0 32 "PIN_A2"
+D G "PIN_LED2" 0 33 "PIN_A1"
+D G "LED1_LOW" 0 35 "output_low(PIN_LED1)"
+D G "LED1_HIGH" 0 36 "output_high(PIN_LED1)"
+D G "LED2_LOW" 0 37 "output_low(PIN_LED2)"
+D G "LED2_HIGH" 0 38 "output_high(PIN_LED2)"
+D G "WRITE_REGISTER_D_ID" 0 40 "0x100" "CAN bus ID."
+V G "stat" 0 45 "{int1 err_ovfl,int8 filthit,int8 buffer,int1 rtr,int1 ext,int1 inv}" `1482 
+V G "buf" 0 46 "int8[2]" `1483 
+F G "MAIN" 0 49 "void()" `1484  "Send data."
+C L "MAIN" 0 42 1 "FUNCTION"
+C L "MAIN" 0 42 7 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep_ulpwu" 1 0

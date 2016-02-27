@@ -1,5 +1,5 @@
 ÀÄBBB_PIC_CAN
-   ÀÄMAIN  0/134  Ram=1
+   ÀÄMAIN  0/126  Ram=1
       ÃÄ@cinit1  (Inline)  Ram=0
       ÃÄcan_init  0/406  Ram=1
       ³  ÃÄcan_set_mode  0/34  Ram=2

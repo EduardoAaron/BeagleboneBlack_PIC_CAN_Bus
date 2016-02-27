@@ -1,4 +1,4 @@
-# **README** #
+# **BEAGLEBONE BLACK AND PIC CAN BUS COMMUNICATION** #
 
 This is a simple example to comunicate the BBB to a PIC micro through CAN bus.
 

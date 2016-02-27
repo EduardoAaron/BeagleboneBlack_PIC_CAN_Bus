@@ -21,5 +21,5 @@ http://www.ebay.es/itm/RS485-CAN-CAPE-Features-RS485-CAN-Interfaces-for-BB-Black
 
 ### Folders ###
 
-* BBB_PIC_CAN.X: PIC program
-* BBB_PIC_CAN: BBB program
+* PIC_program: PIC program
+* BBB_program: BBB program

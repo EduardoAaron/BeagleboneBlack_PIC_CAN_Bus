@@ -1,11 +1,11 @@
-CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
+CCS PCH C Compiler, Version 5.025, 5967               27-feb.-16 15:41
 
                Filename:   C:\Users\Edu\Documents\Electronica\CAN\BBB_PIC_CAN\BBB_PIC_CAN.X\build\default\production\main.lst
 
-               ROM used:   1348 bytes (4%)
-                           Largest free fragment is 31420
-               RAM used:   24 (1%) at main() level
-                           48 (1%) worst case
+               ROM used:   1340 bytes (4%)
+                           Largest free fragment is 31428
+               RAM used:   13 (0%) at main() level
+                           37 (1%) worst case
                Stack used: 1 locations
                Stack size: 31
 
@@ -13,7 +13,7 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 0000:  GOTO   04BE
 .................... /*  
 ....................  * File:   main.c 
-....................  * Author: Edu 
+....................  * Author: Eduardo Aarón Fernández Orallo 
 ....................  * 
 ....................  * Created on 23 de febrero de 2016, 22:44 
 ....................  */ 
@@ -44,7 +44,7 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 .................... #use delay(internal=64000000) 
 *
 0496:  CLRF   FEA
-0498:  MOVLW  18
+0498:  MOVLW  0D
 049A:  MOVWF  FE9
 049C:  MOVF   FEF,W
 049E:  BZ    04BC
@@ -64,6 +64,7 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 04BA:  BRA    04A0
 04BC:  RETURN 0
 ....................  
+.................... //Configure CAN bus speed for 1Mbs 
 .................... #define CAN_USE_EXTENDED_ID FALSE 
 .................... #define CAN_BRG_SEG_2_PHASE_TS TRUE   
 .................... #define CAN_BRG_PRESCALAR 1  
@@ -1263,7 +1264,7 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 ....................    can_set_mode(CAN_OP_CONFIG);   //must be in config mode before params can be set 
 *
 0180:  MOVLW  04
-0182:  MOVWF  17
+0182:  MOVWF  0C
 0184:  RCALL  0004
 ....................    can_set_baud(); 
 0186:  BRA    0026
@@ -1298,203 +1299,203 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 ....................  
 ....................    can_set_id(RX0MASK, CAN_MASK_ACCEPT_ALL, CAN_USE_EXTENDED_ID);  //set mask 0 
 01A0:  MOVLW  0E
-01A2:  MOVWF  26
+01A2:  MOVWF  1B
 01A4:  MOVLW  FB
-01A6:  MOVWF  25
-01A8:  CLRF   2A
-01AA:  CLRF   29
-01AC:  CLRF   28
-01AE:  CLRF   27
-01B0:  CLRF   2B
+01A6:  MOVWF  1A
+01A8:  CLRF   1F
+01AA:  CLRF   1E
+01AC:  CLRF   1D
+01AE:  CLRF   1C
+01B0:  CLRF   20
 01B2:  RCALL  0058
 ....................    can_set_id(RXFILTER0, 0, CAN_USE_EXTENDED_ID);  //set filter 0 of mask 0 
 01B4:  MOVLW  0E
-01B6:  MOVWF  26
+01B6:  MOVWF  1B
 01B8:  MOVLW  E3
-01BA:  MOVWF  25
-01BC:  CLRF   2A
-01BE:  CLRF   29
-01C0:  CLRF   28
-01C2:  CLRF   27
-01C4:  CLRF   2B
+01BA:  MOVWF  1A
+01BC:  CLRF   1F
+01BE:  CLRF   1E
+01C0:  CLRF   1D
+01C2:  CLRF   1C
+01C4:  CLRF   20
 01C6:  RCALL  0058
 ....................    can_set_id(RXFILTER1, 0, CAN_USE_EXTENDED_ID);  //set filter 1 of mask 0 
 01C8:  MOVLW  0E
-01CA:  MOVWF  26
+01CA:  MOVWF  1B
 01CC:  MOVLW  E7
-01CE:  MOVWF  25
-01D0:  CLRF   2A
-01D2:  CLRF   29
-01D4:  CLRF   28
-01D6:  CLRF   27
-01D8:  CLRF   2B
+01CE:  MOVWF  1A
+01D0:  CLRF   1F
+01D2:  CLRF   1E
+01D4:  CLRF   1D
+01D6:  CLRF   1C
+01D8:  CLRF   20
 01DA:  RCALL  0058
 ....................  
 ....................    can_set_id(RX1MASK, CAN_MASK_ACCEPT_ALL, CAN_USE_EXTENDED_ID);  //set mask 1 
 01DC:  MOVLW  0E
-01DE:  MOVWF  26
-01E0:  SETF   25
-01E2:  CLRF   2A
-01E4:  CLRF   29
-01E6:  CLRF   28
-01E8:  CLRF   27
-01EA:  CLRF   2B
+01DE:  MOVWF  1B
+01E0:  SETF   1A
+01E2:  CLRF   1F
+01E4:  CLRF   1E
+01E6:  CLRF   1D
+01E8:  CLRF   1C
+01EA:  CLRF   20
 01EC:  RCALL  0058
 ....................    can_set_id(RXFILTER2, 0, CAN_USE_EXTENDED_ID);  //set filter 0 of mask 1 
 01EE:  MOVLW  0E
-01F0:  MOVWF  26
+01F0:  MOVWF  1B
 01F2:  MOVLW  EB
-01F4:  MOVWF  25
-01F6:  CLRF   2A
-01F8:  CLRF   29
-01FA:  CLRF   28
-01FC:  CLRF   27
-01FE:  CLRF   2B
+01F4:  MOVWF  1A
+01F6:  CLRF   1F
+01F8:  CLRF   1E
+01FA:  CLRF   1D
+01FC:  CLRF   1C
+01FE:  CLRF   20
 0200:  RCALL  0058
 ....................    can_set_id(RXFILTER3, 0, CAN_USE_EXTENDED_ID);  //set filter 1 of mask 1 
 0202:  MOVLW  0E
-0204:  MOVWF  26
+0204:  MOVWF  1B
 0206:  MOVLW  EF
-0208:  MOVWF  25
-020A:  CLRF   2A
-020C:  CLRF   29
-020E:  CLRF   28
-0210:  CLRF   27
-0212:  CLRF   2B
+0208:  MOVWF  1A
+020A:  CLRF   1F
+020C:  CLRF   1E
+020E:  CLRF   1D
+0210:  CLRF   1C
+0212:  CLRF   20
 0214:  RCALL  0058
 ....................    can_set_id(RXFILTER4, 0, CAN_USE_EXTENDED_ID);  //set filter 2 of mask 1 
 0216:  MOVLW  0E
-0218:  MOVWF  26
+0218:  MOVWF  1B
 021A:  MOVLW  F3
-021C:  MOVWF  25
-021E:  CLRF   2A
-0220:  CLRF   29
-0222:  CLRF   28
-0224:  CLRF   27
-0226:  CLRF   2B
+021C:  MOVWF  1A
+021E:  CLRF   1F
+0220:  CLRF   1E
+0222:  CLRF   1D
+0224:  CLRF   1C
+0226:  CLRF   20
 0228:  RCALL  0058
 ....................    can_set_id(RXFILTER5, 0, CAN_USE_EXTENDED_ID);  //set filter 3 of mask 1 
 022A:  MOVLW  0E
-022C:  MOVWF  26
+022C:  MOVWF  1B
 022E:  MOVLW  F7
-0230:  MOVWF  25
-0232:  CLRF   2A
-0234:  CLRF   29
-0236:  CLRF   28
-0238:  CLRF   27
-023A:  CLRF   2B
+0230:  MOVWF  1A
+0232:  CLRF   1F
+0234:  CLRF   1E
+0236:  CLRF   1D
+0238:  CLRF   1C
+023A:  CLRF   20
 023C:  RCALL  0058
 ....................  
 ....................    // set dynamic filters 
 ....................    can_set_id(RXFILTER6, 0, CAN_USE_EXTENDED_ID); 
 023E:  MOVLW  0E
-0240:  MOVWF  26
+0240:  MOVWF  1B
 0242:  MOVLW  4B
-0244:  MOVWF  25
-0246:  CLRF   2A
-0248:  CLRF   29
-024A:  CLRF   28
-024C:  CLRF   27
-024E:  CLRF   2B
+0244:  MOVWF  1A
+0246:  CLRF   1F
+0248:  CLRF   1E
+024A:  CLRF   1D
+024C:  CLRF   1C
+024E:  CLRF   20
 0250:  RCALL  0058
 ....................    can_set_id(RXFILTER7, 0, CAN_USE_EXTENDED_ID); 
 0252:  MOVLW  0E
-0254:  MOVWF  26
+0254:  MOVWF  1B
 0256:  MOVLW  4F
-0258:  MOVWF  25
-025A:  CLRF   2A
-025C:  CLRF   29
-025E:  CLRF   28
-0260:  CLRF   27
-0262:  CLRF   2B
+0258:  MOVWF  1A
+025A:  CLRF   1F
+025C:  CLRF   1E
+025E:  CLRF   1D
+0260:  CLRF   1C
+0262:  CLRF   20
 0264:  RCALL  0058
 ....................    can_set_id(RXFILTER8, 0, CAN_USE_EXTENDED_ID); 
 0266:  MOVLW  0E
-0268:  MOVWF  26
+0268:  MOVWF  1B
 026A:  MOVLW  53
-026C:  MOVWF  25
-026E:  CLRF   2A
-0270:  CLRF   29
-0272:  CLRF   28
-0274:  CLRF   27
-0276:  CLRF   2B
+026C:  MOVWF  1A
+026E:  CLRF   1F
+0270:  CLRF   1E
+0272:  CLRF   1D
+0274:  CLRF   1C
+0276:  CLRF   20
 0278:  RCALL  0058
 ....................    can_set_id(RXFILTER9, 0, CAN_USE_EXTENDED_ID); 
 027A:  MOVLW  0E
-027C:  MOVWF  26
+027C:  MOVWF  1B
 027E:  MOVLW  57
-0280:  MOVWF  25
-0282:  CLRF   2A
-0284:  CLRF   29
-0286:  CLRF   28
-0288:  CLRF   27
-028A:  CLRF   2B
+0280:  MOVWF  1A
+0282:  CLRF   1F
+0284:  CLRF   1E
+0286:  CLRF   1D
+0288:  CLRF   1C
+028A:  CLRF   20
 028C:  RCALL  0058
 ....................    can_set_id(RXFILTER10, 0, CAN_USE_EXTENDED_ID); 
 028E:  MOVLW  0E
-0290:  MOVWF  26
+0290:  MOVWF  1B
 0292:  MOVLW  5B
-0294:  MOVWF  25
-0296:  CLRF   2A
-0298:  CLRF   29
-029A:  CLRF   28
-029C:  CLRF   27
-029E:  CLRF   2B
+0294:  MOVWF  1A
+0296:  CLRF   1F
+0298:  CLRF   1E
+029A:  CLRF   1D
+029C:  CLRF   1C
+029E:  CLRF   20
 02A0:  RCALL  0058
 ....................    can_set_id(RXFILTER11, 0, CAN_USE_EXTENDED_ID); 
 02A2:  MOVLW  0E
-02A4:  MOVWF  26
+02A4:  MOVWF  1B
 02A6:  MOVLW  5F
-02A8:  MOVWF  25
-02AA:  CLRF   2A
-02AC:  CLRF   29
-02AE:  CLRF   28
-02B0:  CLRF   27
-02B2:  CLRF   2B
+02A8:  MOVWF  1A
+02AA:  CLRF   1F
+02AC:  CLRF   1E
+02AE:  CLRF   1D
+02B0:  CLRF   1C
+02B2:  CLRF   20
 02B4:  RCALL  0058
 ....................    can_set_id(RXFILTER12, 0, CAN_USE_EXTENDED_ID); 
 02B6:  MOVLW  0E
-02B8:  MOVWF  26
+02B8:  MOVWF  1B
 02BA:  MOVLW  63
-02BC:  MOVWF  25
-02BE:  CLRF   2A
-02C0:  CLRF   29
-02C2:  CLRF   28
-02C4:  CLRF   27
-02C6:  CLRF   2B
+02BC:  MOVWF  1A
+02BE:  CLRF   1F
+02C0:  CLRF   1E
+02C2:  CLRF   1D
+02C4:  CLRF   1C
+02C6:  CLRF   20
 02C8:  RCALL  0058
 ....................    can_set_id(RXFILTER13, 0, CAN_USE_EXTENDED_ID); 
 02CA:  MOVLW  0E
-02CC:  MOVWF  26
+02CC:  MOVWF  1B
 02CE:  MOVLW  67
-02D0:  MOVWF  25
-02D2:  CLRF   2A
-02D4:  CLRF   29
-02D6:  CLRF   28
-02D8:  CLRF   27
-02DA:  CLRF   2B
+02D0:  MOVWF  1A
+02D2:  CLRF   1F
+02D4:  CLRF   1E
+02D6:  CLRF   1D
+02D8:  CLRF   1C
+02DA:  CLRF   20
 02DC:  RCALL  0058
 ....................    can_set_id(RXFILTER14, 0, CAN_USE_EXTENDED_ID); 
 02DE:  MOVLW  0E
-02E0:  MOVWF  26
+02E0:  MOVWF  1B
 02E2:  MOVLW  6B
-02E4:  MOVWF  25
-02E6:  CLRF   2A
-02E8:  CLRF   29
-02EA:  CLRF   28
-02EC:  CLRF   27
-02EE:  CLRF   2B
+02E4:  MOVWF  1A
+02E6:  CLRF   1F
+02E8:  CLRF   1E
+02EA:  CLRF   1D
+02EC:  CLRF   1C
+02EE:  CLRF   20
 02F0:  RCALL  0058
 ....................    can_set_id(RXFILTER15, 0, CAN_USE_EXTENDED_ID); 
 02F2:  MOVLW  0E
-02F4:  MOVWF  26
+02F4:  MOVWF  1B
 02F6:  MOVLW  6F
-02F8:  MOVWF  25
-02FA:  CLRF   2A
-02FC:  CLRF   29
-02FE:  CLRF   28
-0300:  CLRF   27
-0302:  CLRF   2B
+02F8:  MOVWF  1A
+02FA:  CLRF   1F
+02FC:  CLRF   1E
+02FE:  CLRF   1D
+0300:  CLRF   1C
+0302:  CLRF   20
 0304:  RCALL  0058
 ....................  
 ....................   #if (getenv("DEVICE") == "PIC18F6585") || (getenv("DEVICE") == "PIC18LF6585") || \ 
@@ -1517,9 +1518,9 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 ....................   #endif 
 ....................  
 ....................    can_set_mode(CAN_OP_NORMAL); 
-030E:  CLRF   17
+030E:  CLRF   0C
 0310:  RCALL  0004
-0312:  GOTO   04F6 (RETURN)
+0312:  GOTO   04EE (RETURN)
 .................... } 
 ....................  
 .................... //////////////////////////////////////////////////////////////////////// 
@@ -1683,7 +1684,7 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 .................... void can_set_mode(CAN_OP_MODE mode) { 
 ....................    CANCON.reqop=mode; 
 *
-0004:  SWAPF  17,W
+0004:  SWAPF  0C,W
 0006:  ANDLW  70
 0008:  MOVWF  00
 000A:  BCF    FD8.0
@@ -1697,7 +1698,7 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 001A:  SWAPF  00,F
 001C:  RRCF   00,W
 001E:  ANDLW  07
-0020:  SUBWF  17,W
+0020:  SUBWF  0C,W
 0022:  BNZ   0016
 0024:  RETURN 0
 .................... } 
@@ -1791,41 +1792,41 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 ....................  
 ....................    if (ext) {  //extended 
 *
-0058:  MOVF   2B,F
+0058:  MOVF   20,F
 005A:  BZ    0100
 ....................       //eidl 
 ....................       *addr=make8(id,0); //0:7 
-005C:  MOVFF  25,FE9
-0060:  MOVFF  26,FEA
-0064:  MOVFF  27,FEF
+005C:  MOVFF  1A,FE9
+0060:  MOVFF  1B,FEA
+0064:  MOVFF  1C,FEF
 ....................  
 ....................       //eidh 
 ....................       addr--; 
-0068:  MOVF   25,W
+0068:  MOVF   1A,W
 006A:  BTFSC  FD8.2
-006C:  DECF   26,F
-006E:  DECF   25,F
+006C:  DECF   1B,F
+006E:  DECF   1A,F
 ....................       *addr=make8(id,1); //8:15 
-0070:  MOVFF  25,FE9
-0074:  MOVFF  26,FEA
-0078:  MOVFF  28,FEF
+0070:  MOVFF  1A,FE9
+0074:  MOVFF  1B,FEA
+0078:  MOVFF  1D,FEF
 ....................  
 ....................       //sidl 
 ....................       addr--; 
-007C:  MOVF   25,W
+007C:  MOVF   1A,W
 007E:  BTFSC  FD8.2
-0080:  DECF   26,F
-0082:  DECF   25,F
+0080:  DECF   1B,F
+0082:  DECF   1A,F
 ....................       *addr=make8(id,2) & 0x03;   //16:17 
-0084:  MOVFF  25,FE9
-0088:  MOVFF  26,FEA
-008C:  MOVF   29,W
+0084:  MOVFF  1A,FE9
+0088:  MOVFF  1B,FEA
+008C:  MOVF   1E,W
 008E:  ANDLW  03
 0090:  MOVWF  FEF
 ....................       *addr|=(make8(id,2) << 3) & 0xE0; //18:20 
-0092:  MOVFF  25,FE9
-0096:  MOVFF  26,FEA
-009A:  MOVFF  29,00
+0092:  MOVFF  1A,FE9
+0096:  MOVFF  1B,FEA
+009A:  MOVFF  1E,00
 009E:  RLCF   00,F
 00A0:  RLCF   00,F
 00A2:  RLCF   00,F
@@ -1836,8 +1837,8 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 00AC:  IORWF  FEF,W
 00AE:  MOVWF  FEF
 ....................       *addr|=0x08; 
-00B0:  MOVFF  25,FE9
-00B4:  MOVFF  26,FEA
+00B0:  MOVFF  1A,FE9
+00B4:  MOVFF  1B,FEA
 00B8:  MOVF   FEF,W
 00BA:  IORLW  08
 00BC:  MOVWF  FEF
@@ -1845,14 +1846,14 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 ....................  
 ....................       //sidh 
 ....................       addr--; 
-00BE:  MOVF   25,W
+00BE:  MOVF   1A,W
 00C0:  BTFSC  FD8.2
-00C2:  DECF   26,F
-00C4:  DECF   25,F
+00C2:  DECF   1B,F
+00C4:  DECF   1A,F
 ....................       *addr=((make8(id,2) >> 5) & 0x07 ); //21:23 
-00C6:  MOVFF  25,FE9
-00CA:  MOVFF  26,FEA
-00CE:  MOVFF  29,00
+00C6:  MOVFF  1A,FE9
+00CA:  MOVFF  1B,FEA
+00CE:  MOVFF  1E,00
 00D2:  SWAPF  00,F
 00D4:  RRCF   00,F
 00D6:  MOVLW  07
@@ -1861,9 +1862,9 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 00DC:  ANDLW  07
 00DE:  MOVWF  FEF
 ....................       *addr|=((make8(id,3) << 3) & 0xF8);//24:28 
-00E0:  MOVFF  25,FE9
-00E4:  MOVFF  26,FEA
-00E8:  MOVFF  2A,00
+00E0:  MOVFF  1A,FE9
+00E4:  MOVFF  1B,FEA
+00E8:  MOVFF  1F,00
 00EC:  RLCF   00,F
 00EE:  RLCF   00,F
 00F0:  RLCF   00,F
@@ -1878,31 +1879,31 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 ....................    else {   //standard 
 ....................       //eidl 
 ....................       *addr=0; 
-0100:  MOVFF  25,FE9
-0104:  MOVFF  26,FEA
+0100:  MOVFF  1A,FE9
+0104:  MOVFF  1B,FEA
 0108:  CLRF   FEF
 ....................  
 ....................       //eidh 
 ....................       addr--; 
-010A:  MOVF   25,W
+010A:  MOVF   1A,W
 010C:  BTFSC  FD8.2
-010E:  DECF   26,F
-0110:  DECF   25,F
+010E:  DECF   1B,F
+0110:  DECF   1A,F
 ....................       *addr=0; 
-0112:  MOVFF  25,FE9
-0116:  MOVFF  26,FEA
+0112:  MOVFF  1A,FE9
+0116:  MOVFF  1B,FEA
 011A:  CLRF   FEF
 ....................  
 ....................       //sidl 
 ....................       addr--; 
-011C:  MOVF   25,W
+011C:  MOVF   1A,W
 011E:  BTFSC  FD8.2
-0120:  DECF   26,F
-0122:  DECF   25,F
+0120:  DECF   1B,F
+0122:  DECF   1A,F
 ....................       *addr=(make8(id,0) << 5) & 0xE0; 
-0124:  MOVFF  25,FE9
-0128:  MOVFF  26,FEA
-012C:  MOVFF  27,00
+0124:  MOVFF  1A,FE9
+0128:  MOVFF  1B,FEA
+012C:  MOVFF  1C,00
 0130:  SWAPF  00,F
 0132:  RLCF   00,F
 0134:  MOVLW  E0
@@ -1913,14 +1914,14 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 ....................  
 ....................       //sidh 
 ....................       addr--; 
-013E:  MOVF   25,W
+013E:  MOVF   1A,W
 0140:  BTFSC  FD8.2
-0142:  DECF   26,F
-0144:  DECF   25,F
+0142:  DECF   1B,F
+0144:  DECF   1A,F
 ....................       *addr=(make8(id,0) >> 3) & 0x1F; 
-0146:  MOVFF  25,FE9
-014A:  MOVFF  26,FEA
-014E:  MOVFF  27,00
+0146:  MOVFF  1A,FE9
+014A:  MOVFF  1B,FEA
+014E:  MOVFF  1C,00
 0152:  RRCF   00,F
 0154:  RRCF   00,F
 0156:  RRCF   00,F
@@ -1930,9 +1931,9 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 015E:  ANDLW  1F
 0160:  MOVWF  FEF
 ....................       *addr|=(make8(id,1) << 5) & 0xE0; 
-0162:  MOVFF  25,FE9
-0166:  MOVFF  26,FEA
-016A:  MOVFF  28,00
+0162:  MOVFF  1A,FE9
+0166:  MOVFF  1B,FEA
+016A:  MOVFF  1D,00
 016E:  SWAPF  00,F
 0170:  RLCF   00,F
 0172:  MOVLW  E0
@@ -2141,9 +2142,9 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 ....................    txd0=&TXRXBaD0; 
 *
 0316:  MOVLW  0F
-0318:  MOVWF  23
+0318:  MOVWF  18
 031A:  MOVLW  66
-031C:  MOVWF  22
+031C:  MOVWF  17
 ....................  
 ....................     // find empty transmitter 
 ....................     // map access bank addresses to empty transmitter 
@@ -2168,7 +2169,7 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 0336:  IORLW  03
 0338:  MOVWF  F72
 ....................       port=0; 
-033A:  CLRF   24
+033A:  CLRF   19
 ....................    } 
 033C:  BRA    040C
 ....................    else if (!TXB1CON.txreq) 
@@ -2192,7 +2193,7 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 0356:  MOVWF  F72
 ....................       port=1; 
 0358:  MOVLW  01
-035A:  MOVWF  24
+035A:  MOVWF  19
 ....................    } 
 035C:  BRA    040C
 ....................    else if (!TXB2CON.txreq) 
@@ -2216,7 +2217,7 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 0376:  MOVWF  F72
 ....................       port=2; 
 0378:  MOVLW  02
-037A:  MOVWF  24
+037A:  MOVWF  19
 ....................    } 
 037C:  BRA    040C
 ....................    else if (!B0CONT.txreq && BSEL0.b0txen) 
@@ -2233,7 +2234,7 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 038E:  MOVWF  F72
 ....................       port=3; 
 0390:  MOVLW  03
-0392:  MOVWF  24
+0392:  MOVWF  19
 ....................    } 
 0394:  BRA    040A
 ....................    else if (!B1CONT.txreq && BSEL0.b1txen) 
@@ -2249,7 +2250,7 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 03A4:  MOVWF  F72
 ....................       port=4; 
 03A6:  MOVLW  04
-03A8:  MOVWF  24
+03A8:  MOVWF  19
 ....................    } 
 03AA:  BRA    040A
 ....................    else if (!B2CONT.txreq && BSEL0.b2txen) 
@@ -2265,7 +2266,7 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 03BA:  MOVWF  F72
 ....................       port=5; 
 03BC:  MOVLW  05
-03BE:  MOVWF  24
+03BE:  MOVWF  19
 ....................    } 
 03C0:  BRA    040A
 ....................    else if (!B3CONT.txreq && BSEL0.b3txen) 
@@ -2281,7 +2282,7 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 03D0:  MOVWF  F72
 ....................       port=6; 
 03D2:  MOVLW  06
-03D4:  MOVWF  24
+03D4:  MOVWF  19
 ....................    } 
 03D6:  BRA    040A
 ....................    else if (!B4CONT.txreq && BSEL0.b4txen) 
@@ -2297,7 +2298,7 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 03E6:  MOVWF  F72
 ....................       port=7; 
 03E8:  MOVLW  07
-03EA:  MOVWF  24
+03EA:  MOVWF  19
 ....................    } 
 03EC:  BRA    040A
 ....................    else if (!B5CONT.txreq && BSEL0.b5txen) 
@@ -2313,7 +2314,7 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 03FC:  MOVWF  F72
 ....................       port=8; 
 03FE:  MOVLW  08
-0400:  MOVWF  24
+0400:  MOVWF  19
 ....................    } 
 0402:  BRA    040A
 ....................    else 
@@ -2330,7 +2331,7 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 ....................  
 ....................    //set priority. 
 ....................    TXBaCON.txpri=priority; 
-040C:  MOVF   1E,W
+040C:  MOVF   13,W
 040E:  ANDLW  03
 0410:  MOVWF  00
 0412:  MOVLW  FC
@@ -2341,46 +2342,46 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 ....................    //set tx mask 
 ....................    can_set_id(TXRXBaID, id, ext); 
 041A:  MOVLW  0F
-041C:  MOVWF  26
+041C:  MOVWF  1B
 041E:  MOVLW  64
-0420:  MOVWF  25
-0422:  MOVFF  1A,2A
-0426:  MOVFF  19,29
-042A:  MOVFF  18,28
-042E:  MOVFF  17,27
-0432:  MOVFF  1F,2B
+0420:  MOVWF  1A
+0422:  MOVFF  0F,1F
+0426:  MOVFF  0E,1E
+042A:  MOVFF  0D,1D
+042E:  MOVFF  0C,1C
+0432:  MOVFF  14,20
 0436:  MOVLB  0
 0438:  RCALL  0058
 ....................  
 ....................    //set tx data count 
 ....................    TXBaDLC=len; 
-043A:  MOVFF  1D,F65
+043A:  MOVFF  12,F65
 ....................    TXBaDLC.rtr=rtr; 
 043E:  BCF    F65.6
-0440:  BTFSC  20.0
+0440:  BTFSC  15.0
 0442:  BSF    F65.6
 ....................  
 ....................     for (i=0; i<len; i++) { 
-0444:  CLRF   21
-0446:  MOVF   1D,W
-0448:  SUBWF  21,W
+0444:  CLRF   16
+0446:  MOVF   12,W
+0448:  SUBWF  16,W
 044A:  BC    0474
 ....................       *txd0=*data; 
-044C:  MOVFF  1B,FE9
-0450:  MOVFF  1C,FEA
-0454:  MOVFF  FEF,27
-0458:  MOVFF  23,FEA
-045C:  MOVFF  22,FE9
-0460:  MOVFF  27,FEF
+044C:  MOVFF  10,FE9
+0450:  MOVFF  11,FEA
+0454:  MOVFF  FEF,1C
+0458:  MOVFF  18,FEA
+045C:  MOVFF  17,FE9
+0460:  MOVFF  1C,FEF
 ....................       txd0++; 
-0464:  INCF   22,F
+0464:  INCF   17,F
 0466:  BTFSC  FD8.2
-0468:  INCF   23,F
+0468:  INCF   18,F
 ....................       data++; 
-046A:  INCF   1B,F
+046A:  INCF   10,F
 046C:  BTFSC  FD8.2
-046E:  INCF   1C,F
-0470:  INCF   21,F
+046E:  INCF   11,F
+0470:  INCF   16,F
 0472:  BRA    0446
 ....................     } 
 ....................  
@@ -2421,7 +2422,7 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 048C:  MOVWF  01
 048E:  MOVLB  E
 0490:  MOVLB  0
-0492:  GOTO   051C (RETURN)
+0492:  GOTO   0514 (RETURN)
 .................... } 
 ....................  
 .................... //////////////////////////////////////////////////////////////////////// 
@@ -3516,17 +3517,13 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 .................... #define LED2_LOW  output_low(PIN_LED2) 
 .................... #define LED2_HIGH output_high(PIN_LED2) 
 ....................  
-.................... #define ASK_FOR_ID_AD_B      0x201  //ask for AD info from CAN port B 
+.................... #define WRITE_REGISTER_D_ID      0x100  //CAN bus ID. 
 ....................  
 .................... //Variable bus CAN 
-.................... int32 rx_id; 
-.................... int rx_len,i,b; 
+.................... //int32 rx_id; 
+.................... //int rx_len; 
 .................... struct rx_stat stat; 
-.................... unsigned int receive[2]; 
-.................... unsigned int send[2]; 
-.................... unsigned int16 control; 
-....................  
-....................  
+.................... unsigned int buf[2]; 
 ....................  
 .................... void main ( ) 
 *
@@ -3549,76 +3546,77 @@ CCS PCH C Compiler, Version 5.025, 5967               24-feb.-16 23:04
 04DE:  CLRF   x5E
 04E0:  CLRF   x5F
 .................... { 
-....................     i = 88; 
-04E2:  MOVLW  58
-04E4:  MOVWF  0B
-....................     b = 200; 
-04E6:  MOVLW  C8
-04E8:  MOVWF  0C
-....................     send[0] = 0x24; 
-04EA:  MOVLW  24
-04EC:  MOVWF  13
-....................     send[1] = 0x14; 
-04EE:  MOVLW  14
-04F0:  MOVWF  14
+....................  
+....................     //Send data. 
+....................     buf[0] = 0x24; 
+04E2:  MOVLW  24
+04E4:  MOVWF  0A
+....................     buf[1] = 0x14; 
+04E6:  MOVLW  14
+04E8:  MOVWF  0B
 ....................      
+....................     can_init(); // Initialize the can 
+04EA:  MOVLB  0
+04EC:  BRA    0180
 ....................      
-....................     can_init(); // always initialize the can 
-04F2:  MOVLB  0
-04F4:  BRA    0180
 ....................     while(1) { 
-....................        // if ( can_tbe() ) { 
-....................             LED2_HIGH; 
-04F6:  BCF    F92.1
-04F8:  BSF    F89.1
-....................             LED1_LOW; 
-04FA:  BCF    F92.2
-04FC:  BCF    F89.2
-....................             //can_putd(ASK_FOR_ID_AD_B, &i, 1,1,0,0); //put data on transmit buffer 
-....................             can_putd(0x100,&send,2,1,FALSE,FALSE); 
-04FE:  CLRF   1A
-0500:  CLRF   19
-0502:  MOVLW  01
-0504:  MOVWF  18
-0506:  CLRF   17
-0508:  CLRF   1C
-050A:  MOVLW  13
-050C:  MOVWF  1B
-050E:  MOVLW  02
-0510:  MOVWF  1D
-0512:  MOVLW  01
-0514:  MOVWF  1E
-0516:  CLRF   1F
-0518:  CLRF   20
-051A:  BRA    0316
-....................             delay_ms(500); 
-051C:  MOVLW  02
-051E:  MOVWF  17
-0520:  MOVLW  FA
-0522:  MOVWF  18
-0524:  RCALL  0496
-0526:  DECFSZ 17,F
-0528:  BRA    0520
-....................             LED1_HIGH; 
-052A:  BCF    F92.2
-052C:  BSF    F89.2
-....................             LED2_LOW; 
-052E:  BCF    F92.1
-0530:  BCF    F89.1
-....................             delay_ms(500); 
-0532:  MOVLW  02
-0534:  MOVWF  17
-0536:  MOVLW  FA
-0538:  MOVWF  18
-053A:  RCALL  0496
-053C:  DECFSZ 17,F
-053E:  BRA    0536
-0540:  BRA    04F6
-....................       //  } 
+....................         LED2_HIGH; 
+04EE:  BCF    F92.1
+04F0:  BSF    F89.1
+....................         LED1_LOW; 
+04F2:  BCF    F92.2
+04F4:  BCF    F89.2
+....................         can_putd(WRITE_REGISTER_D_ID,&buf,sizeof(buf),1,FALSE,FALSE);  
+04F6:  CLRF   0F
+04F8:  CLRF   0E
+04FA:  MOVLW  01
+04FC:  MOVWF  0D
+04FE:  CLRF   0C
+0500:  CLRF   11
+0502:  MOVLW  0A
+0504:  MOVWF  10
+0506:  MOVLW  02
+0508:  MOVWF  12
+050A:  MOVLW  01
+050C:  MOVWF  13
+050E:  CLRF   14
+0510:  CLRF   15
+0512:  BRA    0316
+....................         /*  - Identifier: 0x100 
+....................             - Data pointer: buf 
+....................             - Number of data bytes: sizeof(buf) = 2 
+....................             - Priority (0-3) determines the order messages are sent 
+....................             - Flag to indicate 29 bit identifier 
+....................             - Flag to indicate if this is a data frame 
+....................     (       FALSE) or request for frame (TRUE) 
+....................         */ 
+....................         delay_ms(500); 
+0514:  MOVLW  02
+0516:  MOVWF  0C
+0518:  MOVLW  FA
+051A:  MOVWF  0D
+051C:  RCALL  0496
+051E:  DECFSZ 0C,F
+0520:  BRA    0518
+....................         LED1_HIGH; 
+0522:  BCF    F92.2
+0524:  BSF    F89.2
+....................         LED2_LOW; 
+0526:  BCF    F92.1
+0528:  BCF    F89.1
+....................         delay_ms(500); 
+052A:  MOVLW  02
+052C:  MOVWF  0C
+052E:  MOVLW  FA
+0530:  MOVWF  0D
+0532:  RCALL  0496
+0534:  DECFSZ 0C,F
+0536:  BRA    052E
+0538:  BRA    04EE
 ....................     } 
 .................... } 
 ....................  
-0542:  SLEEP 
+053A:  SLEEP 
 ....................  
 
 Configuration Fuses:
